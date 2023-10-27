@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Amiri&family=Borel&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Amiri", serif;
+}
+
+.link-btn {
+  @apply btn bg-[rgb(255,255,255,0.7)] my-8 text-black hover:bg-[rgb(255,255,255,0.9)] transition-all duration-300 ease-in-out text-xl;
+}
+
+.item-center {
+  @apply flex items-center justify-center;
+}
