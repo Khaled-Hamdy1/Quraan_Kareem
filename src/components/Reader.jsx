@@ -27,7 +27,6 @@ function Reader() {
 
   return (
     <div>
-      <h1>khaled hamdy</h1>
       {data &&
         data.attachments.map((item, index) => (
           <div key={index}>
