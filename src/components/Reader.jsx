@@ -1,9 +1,20 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useAudioContext } from "../contexts/AudioContextProvider";
 
 function Reader() {
   const { id } = useParams();
   const [data, setData] = useState(null);
+  const { setAudioURL } = useAudioContext();
+  const playAudio = (url) => {
+    const audio = document.getElementById("sura");
+    setAudioURL(url);
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,14 +37,18 @@ function Reader() {
   }, []);
 
   return (
-    <div>
+    <div className="gap-4 flex-wrap item-center ">
       {data &&
         data.attachments.map((item, index) => (
-          <div key={index}>
-            <div className="link-btn max-w-md flex-wrap">
-              <h1>{item.title}</h1>
-            </div>
-            <audio controls src={item.url}></audio>
+          <div className="link-btn max-w-md flex-wrap" key={index}>
+            <h1>{item.title}</h1>
+            <button
+              className="bg-blue-500 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50
+                text-white text-sm py-2 px-4 rounded-full shadow-lg"
+              onClick={() => playAudio(item.url)}
+            >
+              Play
+            </button>
           </div>
         ))}
     </div>

@@ -6,8 +6,8 @@ function Moshaf() {
   const { page } = useParams();
   return (
     <div className="flex flex-wrap gap-3">
-      {All[page].map((item, index) => (
-        <Link className="link-btn max-w-md flex-wrap" key={index} to={`/moshaf/${page}/${item.id}`}>
+      {All[page].map((item) => (
+        <Link className="link-btn max-w-md flex-wrap" key={item.id} to={`/moshaf/${page}/${item.id}`}>
           <h1>{item.name}</h1>
         </Link>
       ))}
