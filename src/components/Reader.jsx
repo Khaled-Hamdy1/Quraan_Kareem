@@ -40,7 +40,7 @@ function Reader() {
     <div className="gap-4 flex-wrap item-center mb-8">
       {data &&
         data.attachments.map((item, index) => (
-          <div className="link-btn max-w-md flex-wrap" key={index}>
+          <div className="max-w-md w-1/2 !h-16 link-btn" key={index}>
             <h1>{item.title}</h1>
             <button
               className="bg-blue-500 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50
