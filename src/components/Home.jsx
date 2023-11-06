@@ -10,7 +10,6 @@ function Home() {
         <Link
           key={index}
           className="link-btn max-w-[600px] w-8/12"
-          // to={`/data/${index}`}
           to={`/moshaf/${index}`}
         >
           {page}

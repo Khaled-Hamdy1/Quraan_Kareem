@@ -37,7 +37,7 @@ function Reader() {
   }, []);
 
   return (
-    <div className="gap-4 flex-wrap item-center ">
+    <div className="gap-4 flex-wrap item-center mb-8">
       {data &&
         data.attachments.map((item, index) => (
           <div className="link-btn max-w-md flex-wrap" key={index}>
